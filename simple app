@@ -1,0 +1,30 @@
+package Swings;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Simple_swing {
+
+    public static void main(String[] args) {
+        JFrame jf = new JFrame("My Frame");
+        JTextField jt = new JTextField("Enter");
+        JButton jb = new JButton("Click me");
+        JLabel jl = new JLabel();
+        jf.add(jt);
+        jf.add(jb);
+        jf.add(jl);
+        jf.setSize(400, 500);
+        jf.setLayout(new FlowLayout());
+        jf.setVisible(true);
+        jb.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String str = jt.getText();
+                jl.setText(str);
+            }
+        });
+    }
+}
